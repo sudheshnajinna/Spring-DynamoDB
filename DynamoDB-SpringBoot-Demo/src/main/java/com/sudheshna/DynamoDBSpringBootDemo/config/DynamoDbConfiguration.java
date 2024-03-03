@@ -18,23 +18,15 @@ public class DynamoDbConfiguration {
     }
 
     private AmazonDynamoDB buildAmazonDynamoDB() {
-        return AmazonDynamoDBClientBuilder
-                .standard()
-                .withEndpointConfiguration(
-                        new AwsClientBuilder.EndpointConfiguration(
-                                "dynamodb.us-east-2.amazonaws.com",
-                                "us-east-2"
-                        )
-                )
-                .withCredentials(
-                        new AWSStaticCredentialsProvider(
-                                new BasicAWSCredentials(
-                                        "AKIAU6GDYUAXMPD7XSMO",
-                                        "WB7YTWjubDxH4Pdt4PQftzJ7KNQb3r5v31fnSHwv"
-                                )
-                        )
-                )
+        return AmazonDynamoDBClientBuilder.standard()
+                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(
+                        "dynamodb.us-east-2.amazonaws.com", "us-east-2"))
+                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(
+                        "AKIAU6GDYUAXMPD7XSMO",
+                        "WB7YTWjubDxH4Pdt4PQftzJ7KNQb3r5v31fnSHwv"
+                )))
                 .build();
     }
+
 
 }
